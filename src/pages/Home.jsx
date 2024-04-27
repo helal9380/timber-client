@@ -1,15 +1,22 @@
 /** @format */
 
+import { useLoaderData } from "react-router-dom";
 import ArtCard from "../Componnets/ArtCard";
-import Banner from "../Componnets/Banner";
+
 import Slider from "../Componnets/Slider";
+import About from "../Componnets/About";
+import Client from "../Componnets/Client";
 
 const Home = () => {
+  const allArt = useLoaderData();
+  // console.log(allArt)
   return (
     <div>
       {/* <Banner></Banner> */}
       <Slider></Slider>
-      <ArtCard></ArtCard>
+      <ArtCard artCard={allArt}></ArtCard>
+      <About></About>
+      <Client></Client>
     </div>
   );
 };

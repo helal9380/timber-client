@@ -17,8 +17,8 @@
   .slide1 {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.5),
-        rgba(255, 208, 0, 0.3)
+        rgba(0, 0, 0, 0.7),
+        rgba(0,0,0,0.7)
       ),
       url("https://i.ibb.co/10fkHNd/jo-szczepanska-9-OKGEVJi-TKk-unsplash.jpg");
     border-radius: 8px;
@@ -27,7 +27,7 @@
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.7),
-        rgba(255, 208, 0, 0.3)
+        rgba(0,0,0,0.7)
       ),
       url("https://i.ibb.co/QYr6qPd/swapnil-dwivedi-w46t-RF64q-Nc-unsplash.jpg");
     border-radius: 8px;
@@ -36,7 +36,7 @@
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.7),
-        rgba(255, 208, 0, 0.3)
+        rgba(0,0,0,0.7)
       ),
       url("https://i.ibb.co/Sf1Ky8H/tim-arterbury-Vkw-Rmha1-t-I-unsplash.jpg");
     border-radius: 8px;

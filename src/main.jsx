@@ -2,7 +2,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./LayOut/Main.jsx";
@@ -13,6 +13,8 @@ import AllArtCraft from "./pages/AllArtCraft.jsx";
 import MyArt from "./pages/MyArt.jsx";
 import AddArt from "./pages/AddArt.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import Details from "./Details.jsx";
+import PrivateRoute from "./LayOut/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +24,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/addArt'),
+      },
+      {
+        path: '/addArt/:id',
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:5000/addArt/${params.id}`)
       },
       {
         path: "/add_art",
-        element: <AddArt></AddArt>,
+        element: <PrivateRoute><AddArt></AddArt></PrivateRoute>,
       },
       {
         path: "/all_art",
