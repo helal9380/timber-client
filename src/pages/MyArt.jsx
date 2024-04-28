@@ -6,17 +6,53 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const MyArt = () => {
   const { user } = useContext(AuthContext);
   const [art, setArt] = useState(null);
+  const [filteredArt, setFilteredArt] = useState(null); 
+
   useEffect(() => {
     fetch(`http://localhost:5000/myArt/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setArt(data));
+      .then((data) => {
+        setArt(data);
+        setFilteredArt(data);
+      });
   }, [user]);
   console.log(art);
+
+  const handleFilter = (type) => {
+    if (type === "All") {
+      setFilteredArt(art);
+    } else {
+      const filtered = art.filter((item) => item.customaize === 'Yes');
+      setFilteredArt(filtered);
+    }
+  };
   return (
     <div className="my-10">
-      <h2 className="text-center text-3xl font-semibold my-4">My arts and craft</h2>
+      <div className="flex justify-center ">
+        <div className="dropdown dropdown-left ">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1">
+            Filter
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li>
+              <a onClick={ () => handleFilter('All')}>All</a>
+            </li>
+            <li>
+              <a onClick={ () => handleFilter('Customize')}>Customize</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h2 className="text-center text-3xl font-semibold my-4">
+        My arts and craft
+      </h2>
       <div className="max-w-screen-md mx-auto my-5">
-        {art?.map((item) => (
+        {filteredArt?.map((item) => (
           <div
             className="flex gap-5 p-4 border-2 mb-5 rounded border-[#CA8E3E]"
             key={item._id}>
@@ -49,8 +85,14 @@ const MyArt = () => {
                   </p>
                 </div>
               </div>
-              <p className="my-2"><span className="font-semibold">Process Time :</span>{item.processTime}</p>
-              <p className="mb-2"><span className="font-semibold">Category :</span>{item.subcategory}</p>
+              <p className="my-2">
+                <span className="font-semibold">Process Time :</span>
+                {item.processTime}
+              </p>
+              <p className="mb-2">
+                <span className="font-semibold">Category :</span>
+                {item.subcategory}
+              </p>
               <button className="py-1 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
                 Update
               </button>
