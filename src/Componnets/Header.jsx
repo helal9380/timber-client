@@ -64,7 +64,7 @@ const Header = () => {
             ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
             : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
         }
-        to="/my_art">
+        to="/myArt">
         My art
       </NavLink>
       <div>

@@ -14,7 +14,7 @@ import MyArt from "./pages/MyArt.jsx";
 import AddArt from "./pages/AddArt.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import Details from "./Details.jsx";
-import PrivateRoute from "./LayOut/PrivateRoute.jsx";
+import Privateroute from "./LayOut/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,20 +28,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/addArt/:id',
-        element: <Details></Details>,
+        element: <Privateroute><Details></Details></Privateroute>,
         loader: ({params}) => fetch(`http://localhost:5000/addArt/${params.id}`)
       },
       {
         path: "/add_art",
-        element: <PrivateRoute><AddArt></AddArt></PrivateRoute>,
+        element: <Privateroute><AddArt></AddArt></Privateroute>,
       },
       {
         path: "/all_art",
         element: <AllArtCraft></AllArtCraft>,
+        loader: () => fetch('http://localhost:5000/addArt'),
       },
       {
-        path: "/my_art",
-        element: <MyArt></MyArt>,
+        path: "/myArt",
+        element: <Privateroute><MyArt></MyArt></Privateroute>,
       },
       {
         path: "/login",

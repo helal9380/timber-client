@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 // import { toast } from "react-toastify";
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,7 +9,10 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  const { login, signInWithGoogle, signInWithGitHub } = useContext(AuthContext); // Corrected function name
+  const { login, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const location = useLocation();
+  console.log(location);
   const handleSignIn = (e) => {
     // Corrected function name
     e.preventDefault();
@@ -20,6 +23,7 @@ const Login = () => {
       .then((result) => {
         toast.success("Successfuly login");
         console.log(result.user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -29,6 +33,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -38,6 +43,7 @@ const Login = () => {
     signInWithGitHub()
     .then((result) => {
       console.log(result.user);
+      navigate(location?.state ? location.state : "/");
     })
     .catch((error) => {
       console.log(error.message);

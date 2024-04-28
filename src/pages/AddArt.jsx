@@ -1,8 +1,12 @@
 /** @format */
 
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AddArt = () => {
+  const {user} = useContext(AuthContext);
+  // console.log(user.email)
   const handleAdd = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,8 +18,14 @@ const AddArt = () => {
     const rate = form.rating.value;
     const customaize = form.customization.value;
     const processTime = form.processing_time.value;
+    const stock = form.stockStatus.value;
+    const userName = form.username.value;
+    const userEmail = form.email.value;
+    const email = user.email;
+    console.log(email)
     const artCard = {
       imgUrl,
+      email,
       name,
       subcategory,
       shortDes,
@@ -23,6 +33,9 @@ const AddArt = () => {
       customaize,
       rate,
       processTime,
+      userEmail,
+      stock,
+      userName
     };
 
     fetch("http://localhost:5000/addArt", {
@@ -87,6 +100,22 @@ const AddArt = () => {
                 className="grow w-full"
               />
             </label>
+            <label className="input input-bordered flex items-center gap-2">
+              <p className="w-28">stockStatus</p>
+              <input
+                type="text"
+                name="stockStatus"
+                className="grow w-full"
+              />
+            </label>
+            <label className="input input-bordered flex items-center gap-2">
+              <p className="w-24">User Name</p>
+              <input
+                type="text"
+                name="username"
+                className="grow w-full"
+              />
+            </label>
           </div>
           <div className="flex-1 space-y-5">
             <label className="input input-bordered flex items-center gap-2">
@@ -121,9 +150,19 @@ const AddArt = () => {
                 className="grow w-full"
               />
             </label>
+            <label className="input input-bordered flex items-center gap-2">
+              <p className="">Email</p>
+              <input
+                type="text"
+                name="email"
+                defaultValue={ user.email}
+                className="grow w-full"
+              />
+            </label>
+            <button className="btn btn-primary w-full my-5">Add Art & Craft</button>
           </div>
         </div>
-        <button className="btn btn-primary w-full my-5">Add Art & Craft</button>
+        
       </form>
     </div>
   );
