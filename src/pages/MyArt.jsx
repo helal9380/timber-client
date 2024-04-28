@@ -2,6 +2,7 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyArt = () => {
   const { user } = useContext(AuthContext);
@@ -93,9 +94,9 @@ const MyArt = () => {
                 <span className="font-semibold">Category :</span>
                 {item.subcategory}
               </p>
-              <button className="py-1 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
+              <Link to={`/update/${item._id}`} className="py-1 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
                 Update
-              </button>
+              </Link>
               <button className="py-1 ml-2 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
                 Detlete
               </button>

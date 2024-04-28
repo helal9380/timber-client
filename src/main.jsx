@@ -15,6 +15,7 @@ import AddArt from "./pages/AddArt.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import Details from "./Details.jsx";
 import Privateroute from "./LayOut/PrivateRoute.jsx";
+import Update from "./Componnets/Update.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         path: "/all_art",
         element: <AllArtCraft></AllArtCraft>,
         loader: () => fetch('http://localhost:5000/addArt'),
+      },
+      {
+        path: '/update/:id',
+        element:<Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/art/${params.id}`)
       },
       {
         path: "/myArt",
