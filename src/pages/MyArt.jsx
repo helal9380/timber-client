@@ -3,11 +3,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyArt = () => {
   const { user } = useContext(AuthContext);
   const [art, setArt] = useState(null);
-  const [filteredArt, setFilteredArt] = useState(null); 
+  const [loaded, setLoaded] = useState()
+  const [filteredArt, setFilteredArt] = useState(loaded);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myArt/${user?.email}`)
@@ -23,9 +25,40 @@ const MyArt = () => {
     if (type === "All") {
       setFilteredArt(art);
     } else {
-      const filtered = art.filter((item) => item.customaize === 'Yes');
+      const filtered = art.filter((item) => item.customaize === "Yes");
       setFilteredArt(filtered);
     }
+  };
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myArt/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if(data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your art & craft has been deleted.",
+                icon: "success",
+              });
+            }
+            const remaining = filteredArt.filter((item) => item._id !== id);
+            setFilteredArt(remaining);
+            console.log(data);
+          });
+      }
+    });
   };
   return (
     <div className="my-10">
@@ -41,10 +74,10 @@ const MyArt = () => {
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a onClick={ () => handleFilter('All')}>All</a>
+              <a onClick={() => handleFilter("All")}>All</a>
             </li>
             <li>
-              <a onClick={ () => handleFilter('Customize')}>Customize</a>
+              <a onClick={() => handleFilter("Customize")}>Customize</a>
             </li>
           </ul>
         </div>
@@ -94,10 +127,14 @@ const MyArt = () => {
                 <span className="font-semibold">Category :</span>
                 {item.subcategory}
               </p>
-              <Link to={`/update/${item._id}`} className="py-1 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
+              <Link
+                to={`/update/${item._id}`}
+                className="py-1 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
                 Update
               </Link>
-              <button className="py-1 ml-2 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
+              <button
+                onClick={() => handleDelete(item._id)}
+                className="py-1 ml-2 px-4 text-white rounded mt-2 bg-[#CA8E3E]">
                 Detlete
               </button>
             </div>
