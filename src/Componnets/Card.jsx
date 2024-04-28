@@ -22,7 +22,7 @@ const Card = ({ cards }) => {
     })
   }
   return (
-    <div className=" p-4 border-2">
+    <div className=" p-4 border-2 border-[#b65a18] rounded">
         <figure>
           <img
             src={imgUrl}
@@ -31,14 +31,14 @@ const Card = ({ cards }) => {
         </figure>
         <div className="">
           <h2 className="text-xl font-semibold my-3">{name}</h2>
-          <div className='px-4 space-y-2 border-l-2 border-[#ffcc00]'>
+          <div className='px-4 space-y-2 border-l-2 border-[#b65a18]'>
           <p><span className='font-semibold'>Customaize :</span>  {customaize}</p>
           <p><span className='font-semibold'>Rating :</span>  {rate}</p>
           <p><span className='font-semibold'>Process Time :</span>  {processTime}</p>
           <p><span className='font-semibold'>Price :</span>  {pric}</p>
           </div>
           <div className=" justify-end my-5">
-            <Link onClick={ () => handleDetails(_id)} to={`/addArt/${_id}`} className="btn btn-primary">View Details</Link>
+            <Link onClick={ () => handleDetails(_id)} to={`/addArt/${_id}`} className="py-2 px-5 transition-all border border-[#b65a18] text-[#b65a18] font-bold rounded-bl-full hover:bg-[#b65a18] hover:text-white ease-in">View Details</Link>
           </div>
         </div>
       </div>

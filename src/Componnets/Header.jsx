@@ -34,7 +34,7 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
             : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
         }
         to="/">
@@ -43,7 +43,7 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
             : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
         }
         to="/add_art">
@@ -52,7 +52,7 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
             : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
         }
         to="/all_art">
@@ -61,7 +61,7 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
             : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
         }
         to="/myArt">
@@ -71,7 +71,7 @@ const Header = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+              ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
               : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
           }
           to="/register">
@@ -81,7 +81,7 @@ const Header = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+                ? "md:text-xl font-semibold ml-2 py-1 lg:px-5 px-3 rounded-lg"
                 : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
             }
             onClick={handleLogOut}>
@@ -91,7 +91,7 @@ const Header = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-[#CA8E3E] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
+                ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
                 : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
             }
             to="/login">

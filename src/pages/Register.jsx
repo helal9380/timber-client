@@ -36,7 +36,7 @@ const Register = () => {
     })
   }
   return (
-    <div>
+    <div className="mb-10">
       <h2 className="text-center text-5xl font-semibold my-5">Please Register!</h2>
       <div>
         <div className=" w-1/2 mx-auto">
@@ -91,11 +91,11 @@ const Register = () => {
                     required
                   />
                   <label className="label">
-                    <p>Have an account? please <Link className="text-[#ffcc00]" to={'/login'}>Login</Link></p>
+                    <p>Have an account? please <Link className="text-[#b65a18]" to={'/login'}>Login</Link></p>
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Register</button>
+                  <button className="py-2 px-5 bg-[#b65a18] text-white font-semibold">Register</button>
                 </div>
               </form>
             </div>

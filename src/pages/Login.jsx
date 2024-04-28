@@ -86,7 +86,7 @@ const Login = () => {
                     <p>
                       You don not have an account please{" "}
                       <Link
-                        className="text-[#ffcc00]"
+                        className="text-[#b65a18]"
                         to={"/register"}>
                         Register
                       </Link>
@@ -94,7 +94,7 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="py-2 px-5 bg-[#b65a18] text-white font-semibold">Login</button>
                 </div>
               </form>
               <div className="text-center my-5 border py-5">
