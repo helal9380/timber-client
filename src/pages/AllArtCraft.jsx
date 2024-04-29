@@ -9,7 +9,7 @@ const AllArtCraft = () => {
     <div className="my-10">
       <h3 className="text-3xl font-semibold text-center">All Art & craft {data.length}</h3>
       <div>
-        <div className="overflow-x-auto max-w-screen-md mx-auto border-2 border-[#CA8E3E] mt-5">
+        <div className="overflow-x-auto max-w-screen-md mx-auto border-2 border-[#b65a18] mt-5">
           <table className="table">
             {/* head */}
             <thead>
@@ -23,7 +23,7 @@ const AllArtCraft = () => {
                 <th></th>
               </tr>
             </thead>
-            {data.map((item,index) => (
+            {data.slice(0,9).map((item,index) => (
               <tbody key={index}>
                 {/* row 1 */}
                 <tr>
@@ -33,7 +33,7 @@ const AllArtCraft = () => {
                   <td>{item.processTime}</td>
                   <td>{item.rate.slice(0,3)}</td>
                   <td>{item.pric}</td>
-                  <td  className="text-[#CA8E3E]"><Link to={`/addArt/${item._id}`}>Details</Link></td>
+                  <td  className="text-[#b65a18]"><Link to={`/addArt/${item._id}`}>Details</Link></td>
                 </tr>
               </tbody>
             ))}

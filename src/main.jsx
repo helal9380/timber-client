@@ -17,6 +17,7 @@ import Details from "./Details.jsx";
 import Privateroute from "./LayOut/PrivateRoute.jsx";
 import Update from "./Componnets/Update.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import Category from "./Componnets/Category.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,18 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/addArt/${params.id}`)
       },
       {
+        path: '/subcategory',
+        element: <AllArtCraft></AllArtCraft>,
+        loader: () => fetch('http://localhost:5000/subcategory/')
+      },
+      {
         path: "/add_art",
         element: <Privateroute><AddArt></AddArt></Privateroute>,
+      },
+      {
+        path:"/category/:id",
+        element:<Category></Category>,
+        loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
       },
       {
         path: "/all_art",

@@ -23,8 +23,9 @@ const Card = ({ cards }) => {
   }
   return (
     <div className=" p-4 border-2 border-[#b65a18] rounded">
-        <figure>
+        <figure className='h-[250px]'>
           <img
+          className='w-full h-full'
             src={imgUrl}
             alt="Shoes"
           />

@@ -6,6 +6,7 @@ import ArtCard from "../Componnets/ArtCard";
 import Slider from "../Componnets/Slider";
 import About from "../Componnets/About";
 import Client from "../Componnets/Client";
+import ArtAndCraft from "../Componnets/ArtAndCraft";
 
 const Home = () => {
   const allArt = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
       <ArtCard artCard={allArt}></ArtCard>
       <About></About>
       <Client></Client>
+      <ArtAndCraft></ArtAndCraft>
     </div>
   );
 };

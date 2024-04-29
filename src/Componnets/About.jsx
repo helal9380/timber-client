@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div>
       <div className="text-center">
-        <h2 className="text-3xl font-semibold my-4">Crafting Natures Beauty</h2>
+        <h2 className="text-3xl font-semibold my-4">Crafting Natures <span className="text-[#b65a18]">Beauty</span></h2>
         <p className="md:w-1/2 mx-auto mb-5">
           Step into the world of TimberGem, where passion for craftsmanship
           meets reverence for nature. Founded with a vision to celebrate the

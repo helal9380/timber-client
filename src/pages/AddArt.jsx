@@ -3,9 +3,10 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const AddArt = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // console.log(user.email)
   const handleAdd = (e) => {
     e.preventDefault();
@@ -21,11 +22,12 @@ const AddArt = () => {
     const stock = form.stockStatus.value;
     const userName = form.username.value;
     const userEmail = form.email.value;
-    const email = user.email;
-    console.log(email)
+    const id = form.id.value;
+   
+    console.log(subcategory);
     const artCard = {
+      id,
       imgUrl,
-      email,
       name,
       subcategory,
       shortDes,
@@ -35,7 +37,7 @@ const AddArt = () => {
       processTime,
       userEmail,
       stock,
-      userName
+      userName,
     };
 
     fetch("http://localhost:5000/addArt", {
@@ -55,9 +57,8 @@ const AddArt = () => {
             icon: "success",
             confirmButtonText: "Okey",
           });
-          
         }
-        e.target.reset()
+        e.target.reset();
       });
   };
   return (
@@ -86,11 +87,19 @@ const AddArt = () => {
             </label>
             <label className="input input-bordered flex items-center gap-2">
               <p className="w-48">Subcategory name</p>
-              <input
-                type="text"
-                className="grow w-full"
+              <select
                 name="subCategory"
-              />
+                id=""
+                type="text"
+                className="grow w-full">
+                  <option className="font-semibold" disabled selected value="">Categories</option>
+                  <option className="font-semibold" value="Wooden Furniture & Sculptures">Wooden Furniture & Sculptures</option>
+                  <option className="font-semibold" value="Woode nHome Decor">Wooden Home Decor</option>
+                  <option className="font-semibold" value="Wooden Utensil sand Kitchen ware">Wooden Utensil sand Kitchen ware</option>
+                  <option className="font-semibold" value="Jute Home Decor">Jute Home Decor</option>
+                  <option className="font-semibold" value="Jute Kitchen ware & utensils">Jute Kitchen ware & utensils</option>
+                  <option className="font-semibold" value="Jute and wooden jewellery">Jute and wooden jewellery</option>
+                </select>
             </label>
             <label className="input input-bordered flex items-center gap-2">
               <p className="w-48">Short description</p>
@@ -153,16 +162,26 @@ const AddArt = () => {
             <label className="input input-bordered flex items-center gap-2">
               <p className="">Email</p>
               <input
+               readOnly
                 type="text"
                 name="email"
-                defaultValue={ user.email}
+                defaultValue={user.email}
                 className="grow w-full"
               />
             </label>
-            <button className="btn btn-primary w-full my-5">Add Art & Craft</button>
+            <label className="input input-bordered flex items-center gap-2">
+              <p className="">ID</p>
+              <input
+                type="text"
+                name="id"
+                className="grow w-full"
+              />
+            </label>
           </div>
         </div>
-        
+        <button className="py-2 px-5 bg-[#b65a18] text-white font-semibold w-full my-5">
+              Add Art & Craft
+            </button>
       </form>
     </div>
   );
