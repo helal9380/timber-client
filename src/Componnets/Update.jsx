@@ -63,10 +63,10 @@ const Update = () => {
       <form
         onSubmit={handleUpdate}
         className="my-10">
-        <div className="flex gap-5 border p-10 border-[#CA8E3E] justify-center">
-          <div className="w-1/2 space-y-5">
+        <div className="md:flex gap-5 border md:p-10 border-[#CA8E3E] justify-center">
+          <div className="md:w-1/2 space-y-5">
             <label className="input input-bordered flex items-center gap-2">
-              <p className="w-24">Image URL</p>
+              <p className="md:w-24 w-28">Image URL</p>
               <input
                 type="text"
                 name="imageUrl"
@@ -75,7 +75,7 @@ const Update = () => {
               />
             </label>
             <label className="input input-bordered flex items-center gap-2">
-              <p className="w-24">Item name</p>
+              <p className="md:w-24 w-28">Item name</p>
               <input
                 type="text"
                 name="itemName"

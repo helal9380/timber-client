@@ -19,7 +19,7 @@ const Footer = () => {
             Timber <span className="text-[#ffa667]">Gem</span>
           </h2>
         </div>
-        <div className="flex justify-between md:w-full md:px-40">
+        <div className="md:flex justify-between md:w-full md:px-40">
           <div>
             <h2 className="text-xl font-semibold text-start mb-5">Contact us</h2>
             <div className="flex items-center gap-3">
@@ -35,7 +35,7 @@ const Footer = () => {
                 <MdEmail></MdEmail>
               </div>
               <p>
-                <span className="font-semibold">Email:</span>{" "}
+                <span className="font-semibold text-start">Email:</span>{" "}
                 asadurrahman9380@gmail.com
               </p>
             </div>

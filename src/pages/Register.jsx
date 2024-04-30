@@ -37,9 +37,9 @@ const Register = () => {
   }
   return (
     <div className="mb-10">
-      <h2 className="text-center text-5xl font-semibold my-5">Please Register!</h2>
+      <h2 className="text-center lg:text-5xl md:text-3xl text-2xl font-semibold my-5">Please Register!</h2>
       <div>
-        <div className=" w-1/2 mx-auto">
+        <div className=" md:w-1/2 mx-auto">
           <div className="">
             <div className="card shrink-0 w-full">
               <form onSubmit={handleLogin} className="">

@@ -51,9 +51,9 @@ const Login = () => {
   };
   return (
     <div>
-      <h2 className="text-center text-5xl font-semibold my-5">Please Login!</h2>
+      <h2 className="text-center text-2xl md:text-4xl lg:text-5xl font-semibold my-5">Please Login!</h2>
       <div>
-        <div className=" w-1/2 mx-auto">
+        <div className=" md:w-1/2 mx-auto">
           <div className="">
             <div className="card shrink-0 w-full">
               <form
@@ -98,7 +98,7 @@ const Login = () => {
                 </div>
               </form>
               <div className="text-center my-5 border py-5">
-                <h3 className="mb-5">With social icons</h3>
+                <h3 className="mb-5">With social</h3>
                 <div className="flex gap-5 items-center justify-center">
                   <div>
                     <button

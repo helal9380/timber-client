@@ -31,7 +31,7 @@ const ArtAndCraft = () => {
         </h2>
       </Fade>
       <Fade>
-        <p className="w-1/2 mx-auto">
+        <p className="md:w-1/2 mx-auto">
           Discover a world of creativity and craftsmanship with our diverse
           range of art & craft categories. From handmade sculptures to intricate
           jewelry, explore unique subcategories that showcase the creativity and
@@ -39,7 +39,7 @@ const ArtAndCraft = () => {
         </p>
       </Fade>
 
-      <div className="grid grid-cols-3 mt-5 gap-5 max-w-screen-lg mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 mt-5 gap-5 max-w-screen-lg mx-auto">
         {data?.slice(4, 10).map((item) => (
           <Bounce key={item._id}>
             <div

@@ -67,10 +67,10 @@ const AddArt = () => {
       <form
         onSubmit={handleAdd}
         className="my-10">
-        <div className="flex gap-5 border justify-center">
-          <div className="w-1/2 space-y-5">
+        <div className="md:flex gap-5 border justify-center">
+          <div className="md:w-1/2 space-y-5">
             <label className="input input-bordered flex items-center gap-2">
-              <p className="w-24">Image URL</p>
+              <p className="md:w-24 w-28">Image URL</p>
               <input
                 type="text"
                 name="imageUrl"
@@ -78,7 +78,7 @@ const AddArt = () => {
               />
             </label>
             <label className="input input-bordered flex items-center gap-2">
-              <p className="w-24">Item name</p>
+              <p className="md:w-24 w-28">Item name</p>
               <input
                 type="text"
                 name="itemName"
@@ -118,7 +118,7 @@ const AddArt = () => {
               />
             </label>
             <label className="input input-bordered flex items-center gap-2">
-              <p className="w-24">User Name</p>
+              <p className="md:w-24 w-28">User Name</p>
               <input
                 type="text"
                 name="username"

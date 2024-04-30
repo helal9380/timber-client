@@ -50,7 +50,7 @@ const Header = () => {
         className={({ isActive }) =>
           isActive
             ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-            : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
+            : "py-1 lg:px-3 px-3 md:text-xl font-semibold"
         }
         to="/">
         Home
@@ -58,8 +58,8 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-            : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-3 px-3 rounded-lg"
+            : "py-1 lg:px-3 px-3 md:text-xl font-semibold"
         }
         to="/add_art">
         Add Art
@@ -67,8 +67,8 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-            : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-3 px-3 rounded-lg"
+            : "py-1 lg:px-3 px-3 md:text-xl font-semibold"
         }
         to="/all_art">
         All art
@@ -76,8 +76,8 @@ const Header = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-            : "py-1 lg:px-5 px-3 md:text-xl font-semibold"
+            ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-3 px-3 rounded-lg"
+            : "py-1 lg:px-3 px-3 md:text-xl font-semibold"
         }
         to="/myArt">
         My art
@@ -86,8 +86,8 @@ const Header = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-              : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
+              ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-3 px-3 rounded-lg"
+              : "py-1 lg:px-3 px-3 md:text-xl ml-2 font-semibold"
           }
           to="/register">
           Register
@@ -96,8 +96,8 @@ const Header = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "md:text-xl font-semibold ml-2 py-1 lg:px-5 px-3 rounded-lg"
-                : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
+                ? "md:text-xl font-semibold ml-2 py-1 lg:px-3 px-3 rounded-lg"
+                : "py-1 lg:px-3 px-3 md:text-xl ml-2 font-semibold"
             }
             onClick={handleLogOut}>
             LogOut
@@ -106,8 +106,8 @@ const Header = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-5 px-3 rounded-lg"
-                : "py-1 lg:px-5 px-3 md:text-xl ml-2 font-semibold"
+                ? "bg-[#b65a18] md:text-xl font-semibold ml-2 text-white py-1 lg:px-3 px-3 rounded-lg"
+                : "py-1 lg:px-3 px-3 md:text-xl ml-2 font-semibold"
             }
             to="/login">
             Login
@@ -118,7 +118,7 @@ const Header = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar my-2 border-b">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -145,7 +145,7 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="text-2xl text-[#b65a18] font-bold ">Timber Gem</a>
+          <a className="md:text-2xl lg:text-4xl text-xl text-[#b65a18] font-bold ">Timber Gem</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

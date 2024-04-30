@@ -1,10 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.navbar-start {
-    width: 40%;
+
+.navbar {
+    justify-content: space-between;
 }
 
+.py-1 {
+    padding-top: 0;
+}
 .fluid-work-area .work-promo:after {
     content: "";
     position: absolute;
