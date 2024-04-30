@@ -1,6 +1,7 @@
 /** @format */
 import PropTypes from 'prop-types';
 import Card from "./Card";
+import { Typewriter } from 'react-simple-typewriter';
 
 const ArtCard = ({ artCard }) => {
   console.log(artCard);
@@ -8,7 +9,14 @@ const ArtCard = ({ artCard }) => {
     <div>
       <div className="text-center my-10">
         <h2 className="text-4xl mb-5 font-semibold">
-          <span className='text-[#b65a18]'>Handcrafted</span> Wooden Coasters Set
+          <span className='text-[#b65a18]'>Handcrafted : </span>
+          <Typewriter
+                  loop
+                  cursor
+                  words={['Wooden', 'Coasters', 'Set']}
+                  cursorStyle="_"
+                />
+           
         </h2>
         <p className="md:w-4/6 mx-auto">
           Elevate your table settings with our exquisite set of handcrafted
