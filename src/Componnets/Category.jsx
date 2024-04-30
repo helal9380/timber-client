@@ -16,8 +16,8 @@ const Category = () => {
   }
   return (
     <div className="max-w-screen-lg mx-auto">
-      <h2 className="text-4xl text-center font-bold">All Category</h2>
-      <div className="grid md:grid-cols-3 gap-5 my-10">
+      <h2 className="text-2xl md:text-4xl text-center font-bold">All Category</h2>
+      <div className="grid md:grid-cols-3 gap-5 my-5 md:my-10">
         {data?.map((item) => (
           <div className="p-2 border border-[#b65a18] rounded-lg" key={item._id}>
             <div className="w-full h-[200px]">

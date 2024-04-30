@@ -7,7 +7,7 @@ const CategoryDetails = () => {
   const data = useLoaderData();
   console.log(data);
   return (
-    <div className="my-5 w-[60%] mx-auto">
+    <div className="my-5 md:w-[60%] mx-auto">
       <h2 className="text-4xl font-semibold my-5 text-center">
         Category Details
       </h2>

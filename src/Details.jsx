@@ -17,12 +17,12 @@ const Details = () => {
   } = loadedData;
   console.log(loadedData);
   return (
-    <div className="my-10">
+    <div className="md:my-5 my-5">
         <div style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${imgUrl})`,backgroundRepeat: 'no-repeat',backgroundSize: 'cover', padding: '40px 0px'}}>
             <h2 className="text-4xl font-bold text-center py-10 text-white">Details</h2>
         </div>
-      <div className="flex gap-5 my-10">
-        <div className="w-1/2">
+      <div className="md:flex gap-5 my-10">
+        <div className="md:w-1/2">
           <img
           className="rounded-lg"
             src={imgUrl}
