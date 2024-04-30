@@ -21,6 +21,10 @@
 - Jute Kitchenware & utensils
 - Jute and wooden jewellery
 
+### NPM install packege name :
+- React simple typewriter
+- React awesome reveal
+
 
 
 
