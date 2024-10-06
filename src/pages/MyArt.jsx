@@ -1,14 +1,14 @@
 /** @format */
 
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const MyArt = () => {
   const { user } = useContext(AuthContext);
   const [art, setArt] = useState(null);
-  const [loaded, setLoaded] = useState()
+  const [loaded, setLoaded] = useState();
   const [filteredArt, setFilteredArt] = useState(loaded);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const MyArt = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if(data.deletedCount > 0) {
+            if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your art & craft has been deleted.",

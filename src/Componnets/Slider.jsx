@@ -1,10 +1,10 @@
 /** @format */
 import { Typewriter } from "react-simple-typewriter";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
-import "./slide.css";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./slide.css";
 
 const Slider = () => {
   return (
@@ -58,7 +58,14 @@ const Slider = () => {
                 <Typewriter
                   loop
                   cursor
-                  words={['Crafted', 'with', 'Care','Sustainable', 'Creations', 'with']}
+                  words={[
+                    "Crafted",
+                    "with",
+                    "Care",
+                    "Sustainable",
+                    "Creations",
+                    "with",
+                  ]}
                   cursorStyle="_"
                 />
               </h2>
@@ -83,12 +90,18 @@ const Slider = () => {
               data-aos-duration="1000"
               className=" text-white md:w-[70%] mx-auto text-center">
               <h2 className="md:text-4xl lg:text-6xl leading-snug text-2xl font-bold mb-3">
-             
                 <span className="text-[#b65a18]">Space with :</span>
                 <Typewriter
                   loop
                   cursor
-                  words={['Wood','Timeless', 'Elegance', 'Elevate', 'Your', 'with']}
+                  words={[
+                    "Wood",
+                    "Timeless",
+                    "Elegance",
+                    "Elevate",
+                    "Your",
+                    "with",
+                  ]}
                   cursorStyle="_"
                 />
               </h2>

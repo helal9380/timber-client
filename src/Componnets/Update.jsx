@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const Update = () => {
   const updatedData = useLoaderData();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   console.log(updatedData);
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -49,11 +49,10 @@ const Update = () => {
             text: "Do you want to continue",
             icon: "success",
             confirmButtonText: "Okey",
-            
           });
         }
         e.target.reset();
-        navigate('/myArt')
+        navigate("/myArt");
       });
   };
 
@@ -96,7 +95,7 @@ const Update = () => {
               <p className="w-48">Short description</p>
               <input
                 type="text"
-                defaultValue={updatedData?.shortDes.slice(0,10)}
+                defaultValue={updatedData?.shortDes.slice(0, 10)}
                 name="shortDescription"
                 className="grow w-full"
               />
@@ -110,7 +109,6 @@ const Update = () => {
                 className="grow w-full"
               />
             </label>
-           
           </div>
           <div className="flex-1 space-y-5">
             <label className="input input-bordered flex items-center gap-2">
@@ -149,7 +147,7 @@ const Update = () => {
                 className="grow w-full"
               />
             </label>
-            
+
             <button className="py-2 px-4 rounded text-white bg-[#CA8E3E] w-full my-5">
               Update Art & Craft
             </button>

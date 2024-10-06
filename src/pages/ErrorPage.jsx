@@ -1,10 +1,10 @@
+/** @format */
+
 import { Link } from "react-router-dom";
 
-
 const ErrorPage = () => {
-    return (
-        <div className="max-w-screen-lg mx-auto">
-     
+  return (
+    <div className="max-w-screen-lg mx-auto">
       <div className="flex justify-center mt-20 items-center">
         <div className="text-center">
           <h2 className="text-7xl font-bold my-2">
@@ -15,7 +15,8 @@ const ErrorPage = () => {
             We apologize for the inconvenience, but the page you are looking for
             cannot be found at the moment.
           </p>
-          <Link to='/'
+          <Link
+            to="/"
             href="#_"
             className=" relative px-5 py-3 overflow-hidden font-medium text-[#b65a18] bg-transparent border border-[#b65a18] rounded-lg shadow-inner group">
             <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-[#b65a18] group-hover:w-full ease"></span>
@@ -30,7 +31,7 @@ const ErrorPage = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default ErrorPage;
