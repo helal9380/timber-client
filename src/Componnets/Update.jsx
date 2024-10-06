@@ -33,7 +33,7 @@ const Update = () => {
     };
 
     console.log(updateArt);
-    fetch(`http://localhost:5000/update/${updatedData._id}`, {
+    fetch(`https://timber-gem-server.vercel.app/update/${updatedData._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

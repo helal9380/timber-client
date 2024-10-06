@@ -12,7 +12,7 @@ const MyArt = () => {
   const [filteredArt, setFilteredArt] = useState(loaded);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myArt/${user?.email}`)
+    fetch(`https://timber-gem-server.vercel.app/myArt/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setArt(data);
@@ -41,7 +41,7 @@ const MyArt = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myArt/${id}`, {
+        fetch(`https://timber-gem-server.vercel.app/myArt/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

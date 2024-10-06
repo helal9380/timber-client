@@ -8,7 +8,7 @@ const Category = () => {
 
   const handdleCategory = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/categorydetails/${id}`)
+    fetch(`https://timber-gem-server.vercel.app/categorydetails/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

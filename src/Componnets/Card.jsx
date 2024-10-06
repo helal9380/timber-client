@@ -7,7 +7,7 @@ const Card = ({ cards }) => {
 
   const handleDetails = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/addArt/${id}`)
+    fetch(`https://timber-gem-server.vercel.app/addArt/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

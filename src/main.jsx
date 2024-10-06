@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addArt"),
+        loader: () => fetch("https://timber-gem-server.vercel.app/addArt"),
       },
       {
         path: "/addArt/:id",
@@ -39,18 +39,21 @@ const router = createBrowserRouter([
           </Privateroute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addArt/${params.id}`),
+          fetch(`https://timber-gem-server.vercel.app/addArt/${params.id}`),
       },
       {
         path: "/subcategory",
         element: <AllArtCraft></AllArtCraft>,
-        loader: () => fetch("http://localhost:5000/subcategory/"),
+        loader: () =>
+          fetch("https://timber-gem-server.vercel.app/subcategory/"),
       },
       {
         path: "/categorydetails/:id",
         element: <CategoryDetails></CategoryDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categorydetails/${params.id}`),
+          fetch(
+            `https://timber-gem-server.vercel.app/categorydetails/${params.id}`
+          ),
       },
       {
         path: "/add_art",
@@ -64,12 +67,12 @@ const router = createBrowserRouter([
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://timber-gem-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/all_art",
         element: <AllArtCraft></AllArtCraft>,
-        loader: () => fetch("http://localhost:5000/addArt"),
+        loader: () => fetch("https://timber-gem-server.vercel.app/addArt"),
       },
       {
         path: "/update/:id",
@@ -78,7 +81,8 @@ const router = createBrowserRouter([
             <Update></Update>
           </Privateroute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://timber-gem-server.vercel.app/art/${params.id}`),
       },
       {
         path: "/myArt",

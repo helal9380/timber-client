@@ -10,7 +10,7 @@ const ArtAndCraft = () => {
   // console.log(data);
 
   const handleCategory = (id) => {
-    fetch(`http://localhost:5000/category/${id}`)
+    fetch(`https://timber-gem-server.vercel.app/category/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

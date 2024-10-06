@@ -39,7 +39,7 @@ const AddArt = () => {
       userName,
     };
 
-    fetch("http://localhost:5000/addArt", {
+    fetch("https://timber-gem-server.vercel.app/addArt", {
       method: "POST",
       headers: {
         "content-type": "application/json",
